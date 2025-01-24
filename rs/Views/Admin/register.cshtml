@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model RegAdmin
+
+<!-- main panel starts -->
+<div class="main-panel">
+    <div class="content-wrapper" style="background-color: #2c2c2c;">
+        <div class="row justify-content-center">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card shadow-lg border-0" style="background-color: #333333; color: #ffffff;">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-center text-warning mb-4">Register</h4>
+
+                        <form method="POST" class="needs-validation" novalidate>
+                            <!-- Username -->
+                            <div class="form-group">
+                                <label for="UserName" class="font-weight-bold">Username</label>
+                                <input type="text" asp-for="UserName" class="form-control"
+                                       placeholder="Enter your username" id="UserName" required>
+                                <div class="invalid-feedback">
+                                    Please enter your username.
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="Email" class="font-weight-bold">Email</label>
+                                <input type="email" asp-for="Email" class="form-control"
+                                       placeholder="Enter your email" id="Email" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="Password" class="font-weight-bold">Password</label>
+                                <input type="password" asp-for="Password" class="form-control"
+                                       placeholder="Enter your password" id="Password" required>
+                                <div class="invalid-feedback">
+                                    Please enter your password.
+                                </div>
+                            </div>
+
+                            <!-- Login Link -->
+                            <div class="text-right mb-3">
+                                <a asp-action="login" asp-controller="Admin" class="text-warning font-weight-bold" aria-label="Login if you already have an account">
+                                    Already have an account? Login here.
+                                </a>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" name="submit" class="btn btn-warning btn-block">
+                                Register
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main-panel ends -->
